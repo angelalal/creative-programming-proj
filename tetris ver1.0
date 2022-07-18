@@ -1,0 +1,155 @@
+
+Block aBlock;
+void setup(){
+  size(200,400);
+  aBlock=new Block(4);
+  
+  frameRate(3);
+}
+
+void draw(){
+  background(255);
+  
+  
+  aBlock.draw();
+  
+  
+}
+
+
+
+class Block{
+  
+  int blockWidth=20;
+  boolean collidedOrNot=false;
+  int[][] pos;//position
+  
+  Block(int type){
+    
+   
+
+    if(type==0){ //stick
+    pos=new int[][]{
+      new int[]{20,20}
+      ,new int[]{20,40}
+      ,new int[]{20,60}
+      ,new int[]{20,80}
+    };
+    
+    }
+    
+    
+    if(type==1){ //j
+    pos=new int[][]{
+      new int[]{40,20}
+      ,new int[]{40,40}
+      ,new int[]{40,60}
+      ,new int[]{20,60}
+    };
+    
+    }
+ 
+    if(type==2){ //l
+    pos=new int[][]{
+      new int[]{20,20}
+      ,new int[]{20,40}
+      ,new int[]{20,60}
+      ,new int[]{40,60}
+    };
+    
+    }
+    
+    else if(type==3){ //square
+    pos=new int[][]{
+      new int[]{20,20}
+      ,new int[]{20,40}
+      ,new int[]{40,20}
+      ,new int[]{40,40}
+    };
+
+    }
+    
+    else if(type==4){ //z
+    pos=new int[][]{
+      new int[]{20,20}
+      ,new int[]{40,20}
+      ,new int[]{40,40}
+      ,new int[]{60,40}
+    };
+
+    }
+    
+    else if(type==5){ //s
+    pos=new int[][]{
+      new int[]{60,20}
+      ,new int[]{40,20}
+      ,new int[]{40,40}
+      ,new int[]{20,40}
+    };
+
+    }
+    
+    else if(type==6){ //middle
+    pos=new int[][]{
+      new int[]{20,40}
+      ,new int[]{40,40}
+      ,new int[]{60,40}
+      ,new int[]{40,20}
+    };
+    
+    }
+    
+    
+  }
+
+
+
+  
+  void draw(){
+   
+    rect(pos[0][0],pos[0][1], blockWidth, blockWidth);
+    rect(pos[1][0],pos[1][1] , blockWidth, blockWidth);
+    rect(pos[2][0],pos[2][1], blockWidth, blockWidth);
+    
+    rect(pos[3][0],pos[3][1], blockWidth, blockWidth);
+   
+   //check boundary first
+   
+   
+   
+    for(int i=0;i<pos.length;++i){
+      if(pos[i][1] >= height-blockWidth){
+        collidedOrNot=true;
+      }
+    }
+    
+    
+    
+    
+    //if collidedOrNot wants to stay false, all 4 block should stay false;
+    
+    
+    //then move them
+    if(!collidedOrNot){
+    for(int i=0;i<pos.length;++i){
+       
+      
+        pos[i][1]+=blockWidth;
+      
+  }//end:loop
+    }
+  
+  }
+  
+  
+  
+}//end: class Block
+
+//boolean checkBottom()
+
+//boolean checkColumn(int columnNumberToCheck){
+  
+//}
+
+
+//rotation. it's not gonna work with rotate()

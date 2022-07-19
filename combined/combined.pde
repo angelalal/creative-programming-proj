@@ -12,7 +12,7 @@ void setup() {
   
   //frameRate(1);
   
-  shapeList.add(new Shape(0));
+  shapeList.add(new Shape((int)random(0,7)));
   currentShapeIdx = 0;
 
 }

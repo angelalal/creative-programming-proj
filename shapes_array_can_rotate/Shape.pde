@@ -57,23 +57,16 @@ class Shape{
   }
   
   int[][] getArr(){
-    return arr;    
+    return arr;
   }
   
-  void draw(){
-    
-  }
-  
-  public boolean canMove(){
+  boolean canMove(){
     boolean boo=true;
     for(int i=0; i<arr.length; i++){
-      if(arr[i][1]>=height/blockSize-1){
-        boo = false ;
-      }
-
-      
+     if(arr[i][1]>=height/blockSize-1){
+      boo = false ;
+     }
     }
-    
     return boo;
   }
   
@@ -84,11 +77,34 @@ class Shape{
         
           int value = arr[x][1];
           arr[x][1] = value + 1;
-      }
             
+      }
     } else {
       shapeList.add(new Shape((int)random(0, 7)));
       currentShapeIdx++;
     }
+  }
+  
+  void rotater(){
+    //int [] mid = new int[2];
+    //mid = arr[2];
+    int midA = arr[2][0];
+    int midB = arr[2][1];
+    for(int x=0; x<arr.length; x++){
+      int a = arr[x][0];
+      int b = arr[x][1];
+      blocks[a][b] = 0;
+      arr[x][0] = -b;
+      arr[x][1] = a;
+      //println(a, b, arr[x][0], arr[x][1]);
+    }
+    int aDiff = midA - arr[2][0];
+    int bDiff = midB - arr[2][1];
+    for(int x=0; x<arr.length; x++){
+     arr[x][0] += aDiff;
+     arr[x][1] += bDiff;
+     //println(midA, midB, arr[x][0], arr[x][1], aDiff, bDiff);
+    }
+    
   }
 }

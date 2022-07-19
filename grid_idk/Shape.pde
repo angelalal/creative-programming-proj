@@ -4,12 +4,54 @@ class Shape{
   
   Shape(int type){
     this.type = type;
-    if(type == 0){
+    if(type == 0){ //stick
       arr = new int[][]{
-        new int[]{3, 3}
-        , new int[]{3, 4}
-        , new int[]{3, 5}
-        , new int[]{3, 6}
+        new int[]{9, 0}
+        , new int[]{9, 1}
+        , new int[]{9, 2}
+        , new int[]{9, 3}
+      };
+    } else if(type == 1){ //J
+      arr = new int[][]{
+        new int[]{10, 1}
+        , new int[]{10, 2}
+        , new int[]{10, 3}
+        , new int[]{9, 3}
+      };
+    } else if(type == 2){ // L
+      arr = new int[][]{
+        new int[]{9, 1}
+        , new int[]{9, 2}
+        , new int[]{9, 3}
+        , new int[]{10, 3}
+      };
+    } else if(type == 3){ //square
+      arr = new int[][]{
+        new int[]{9, 0}
+        , new int[]{9, 1}
+        , new int[]{10, 0}
+        , new int[]{10, 1}
+      };
+    } else if(type == 4){ //Z
+      arr = new int[][]{
+        new int[]{8, 0}
+        , new int[]{9, 0}
+        , new int[]{9, 1}
+        , new int[]{10, 1}
+      };
+    } else if(type == 5){ //S
+      arr = new int[][]{
+        new int[]{10, 0}
+        , new int[]{9, 0}
+        , new int[]{9, 1}
+        , new int[]{8, 1}
+      };
+    } else if(type == 6){ //mid
+      arr = new int[][]{
+        new int[]{8, 1}
+        , new int[]{9, 0}
+        , new int[]{9, 1}
+        , new int[]{10, 1}
       };
     }
   }
@@ -25,6 +67,8 @@ class Shape{
         
       }
     }
+    
+   
  
   
 }

@@ -1,4 +1,6 @@
-leaves traces when moving left&right
+
 add touchy
+ <br />
 add clear line when full
+ <br />
 add side boundary

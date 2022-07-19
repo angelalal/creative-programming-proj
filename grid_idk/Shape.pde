@@ -60,13 +60,27 @@ class Shape{
     return arr;
   }
   
-  void update(){
-    for (int x=0; x<arr.length; x++) {
-      int value = arr[x][1];
-      arr[x][1] = value + 1;
-        
-      }
+  boolean canMove(){
+    boolean boo=true;
+    for(int i=0; i<arr.length; i++){
+     if(arr[i][1]>=height/blockSize-1){
+      boo = false ;
+     }
     }
+    return boo;
+  }
+  
+  void update(){
+    boolean boo = canMove();
+    if(boo){
+      for (int x=0; x<arr.length; x++) {
+        
+          int value = arr[x][1];
+          arr[x][1] = value + 1;
+            
+          }
+      }
+  }
     
    
  

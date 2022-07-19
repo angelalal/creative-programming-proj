@@ -18,8 +18,12 @@ void setup() {
 }
 
 void keyPressed(){
-  if(shapeList.get(currentShapeIdx).canMove()){
-    shapeList.get(currentShapeIdx).rotater();
+  if (key == CODED){
+    if (keyCode == UP){
+      if(shapeList.get(currentShapeIdx).canMove()){
+        shapeList.get(currentShapeIdx).rotater();
+      }
+    }
   }
 }
 

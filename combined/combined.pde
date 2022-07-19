@@ -45,6 +45,23 @@ void draw() {
     shapeList.get(currentShapeIdx).update();
   }
   
+  if (keyPressed == true && frameCount%5==0){
+        
+        if (key == CODED){
+    if (keyCode == RIGHT){
+      shapeList.get(currentShapeIdx).moveRight();
+      //println("yay");
+    }
+  }
+     
+  if (key == CODED){
+    if (keyCode == LEFT){
+      shapeList.get(currentShapeIdx).moveLeft();
+      //println("woo");
+     }
+  }
+}
+  
   for (int x=0; x<width/blockSize; x++) {
     for (int y=0; y<height/blockSize; y++) {
       for (int i=0; i<shapeList.get(currentShapeIdx).getArr().length; i++) {
@@ -71,22 +88,7 @@ void draw() {
     }
   }
   
-  if (keyPressed == true && frameCount%4==0){
-        
-        if (key == CODED){
-    if (keyCode == RIGHT){
-      shapeList.get(currentShapeIdx).moveRight();
-      println("yay");
-    }
-  }
-     
-  if (key == CODED){
-    if (keyCode == LEFT){
-      shapeList.get(currentShapeIdx).moveLeft();
-      println("woo");
-     }
-  }
-}
+  
 
 
   

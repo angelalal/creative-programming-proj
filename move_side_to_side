@@ -1,0 +1,33 @@
+//COPY this stuff in
+
+void setup(){
+
+//take out frameRate
+//frameRate(1);
+}
+
+void draw(){
+
+//replace shape1.update with ALL this below
+//extend down
+if(frameCount%60 == 0) shape1.update();
+
+//side to side
+if (keyPressed == true && frameCount%4==0){
+        
+        if (key == CODED){
+    if (keyCode == RIGHT){
+      shape1.update2();
+      println("yay");
+    }
+  }
+     
+  if (key == CODED){
+    if (keyCode == LEFT){
+      shape1.update3();
+      println("woo");
+     }
+  }
+}
+
+}

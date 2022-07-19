@@ -109,17 +109,32 @@ class Shape{
   }
   
   void moveRight(){
-    for (int y=0; y<arr.length; y++) {
-      int value = arr[y][0];
-      arr[y][0] = value + 1;
-      
+    boolean canMoveRight = true;
+      for(int i=0; i<arr.length; i++){
+        if(arr[i][0]>=width/blockSize - 1){
+          canMoveRight = false ;
+        }
       }
+    if(canMoveRight){
+      for (int y=0; y<arr.length; y++) {
+        int value = arr[y][0];
+        arr[y][0] = value + 1;
+      }
+    }
   }
   
    void moveLeft(){
-    for (int y=0; y<arr.length; y++) {
-      int value = arr[y][0];
-      arr[y][0] = value - 1;
-      }
+     boolean canMoveLeft = true;
+     for(int i=0; i<arr.length; i++){
+       if(arr[i][0]<=0){
+        canMoveLeft = false ;
+       }
+     }
+     if(canMoveLeft){
+       for (int y=0; y<arr.length; y++) {
+         int value = arr[y][0];
+         arr[y][0] = value - 1;
+       }
+     }
   }
 }

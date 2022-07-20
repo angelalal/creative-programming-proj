@@ -6,7 +6,5 @@ add clear line when full
 add end game when fill to top
  <br />
  <br />
-minor bug issues
- <br />
-moving l/r when it reaches the bottom
-  
+
+fixed minor bugs ish but maybe can find more

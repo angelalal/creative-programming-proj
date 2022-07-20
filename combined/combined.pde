@@ -63,34 +63,39 @@ void draw() {
   }
 }
   
-  for (int x=0; x<width/blockSize; x++) {
-    for (int y=0; y<height/blockSize; y++) {
-      for (int i=0; i<shapeList.get(currentShapeIdx).getArr().length; i++) {
-        if (x==shapeList.get(currentShapeIdx).getArr()[i][0] && y==shapeList.get(currentShapeIdx).getArr()[i][1]) {
-          //println(shape1.getArr()[0][1]);
-          blocks[x][y] = 1;
-        }
-      }
-    }
-  }
+  
  
  //blocks[3][3] = 1;
    
 
   for (int x=0; x<width/blockSize; x++) {
     for (int y=0; y<height/blockSize; y++) {
+      fill(255);
+      stroke(200);
+      rect (x*blockSize, y*blockSize, blockSize, blockSize);
+      
+    }
+  }
+  
+  for (int x=0; x<width/blockSize; x++) {
+    for (int y=0; y<height/blockSize; y++) {
       if (blocks[x][y]==1) {
         fill(0);
-      } else {
+      } else{
         fill(255);
+      }
+      for(int i=0; i<shapeList.get(currentShapeIdx).getArr().length; i++){
+      int a = shapeList.get(currentShapeIdx).getArr()[i][0];
+      int b = shapeList.get(currentShapeIdx).getArr()[i][1];
+      if(x == a && y == b){
+        fill(0);
+      }
       }
       rect (x*blockSize, y*blockSize, blockSize, blockSize);
       
     }
   }
   
-  
-
 
   
   

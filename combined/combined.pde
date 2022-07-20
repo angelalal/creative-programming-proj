@@ -26,6 +26,21 @@ void keyPressed(){
         shapeList.get(currentShapeIdx).rotater();
       }
     }
+    else if(keyCode == DOWN && shapeList.get(currentShapeIdx).canMoveDown()){
+     for (int x=0; x<shapeList.get(currentShapeIdx).arr.length; x++) {
+          int value = shapeList.get(currentShapeIdx).arr[x][1];
+          shapeList.get(currentShapeIdx).arr[x][1] = value + 1;
+      } 
+    }
+    else if (keyCode == RIGHT){
+      shapeList.get(currentShapeIdx).moveRight();
+      //println("yay");
+    }
+    else if (keyCode == LEFT){
+      shapeList.get(currentShapeIdx).moveLeft();
+      //println("woo");
+     }
+    
   }
 }
 
@@ -47,21 +62,21 @@ void draw() {
     shapeList.get(currentShapeIdx).update();
   }
   
-  if (keyPressed == true && frameCount%5==0){
-    if (key == CODED){
-      if (keyCode == RIGHT){
-        shapeList.get(currentShapeIdx).moveRight();
-        //println("yay");
-      }
-    }
+//  if (keyPressed == true && frameCount%5==0){
+//    if (key == CODED){
+//      if (keyCode == RIGHT){
+//        shapeList.get(currentShapeIdx).moveRight();
+//        //println("yay");
+//      }
+//    }
      
-  if (key == CODED){
-    if (keyCode == LEFT){
-      shapeList.get(currentShapeIdx).moveLeft();
-      //println("woo");
-     }
-  }
-}
+//  if (key == CODED){
+//    if (keyCode == LEFT){
+//      shapeList.get(currentShapeIdx).moveLeft();
+//      //println("woo");
+//     }
+//  }
+//}
   
   
  

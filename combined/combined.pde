@@ -1,4 +1,4 @@
-int blockSize = 20;
+int blockSize = 30;
 
 int[][] blocks;
 
@@ -6,7 +6,7 @@ ArrayList<Shape> shapeList = new ArrayList<>();
 int currentShapeIdx;
 
 void setup() {
-  size (400, 600);
+  size (390, 600);
 
   blocks = new int[width/blockSize][height/blockSize];
   
@@ -20,7 +20,9 @@ void setup() {
 void keyPressed(){
   if (key == CODED){
     if (keyCode == UP){
-      if(shapeList.get(currentShapeIdx).canMove()){
+      if(shapeList.get(currentShapeIdx).canMoveDown() 
+      && shapeList.get(currentShapeIdx).canMoveRight() 
+      && shapeList.get(currentShapeIdx).canMoveLeft()){
         shapeList.get(currentShapeIdx).rotater();
       }
     }
@@ -29,7 +31,7 @@ void keyPressed(){
 
 void draw() {
   
-  if(shapeList.get(currentShapeIdx).canMove()){
+  if(shapeList.get(currentShapeIdx).canMoveDown()){
     for (int x=0; x<width/blockSize; x++) {
       for (int y=0; y<height/blockSize; y++) {
         for (int i=0; i<shapeList.get(currentShapeIdx).getArr().length; i++) {
@@ -41,18 +43,17 @@ void draw() {
     }
   }
   
-  if(frameCount%30 == 0){
+  if(frameCount%20 == 0){
     shapeList.get(currentShapeIdx).update();
   }
   
   if (keyPressed == true && frameCount%5==0){
-        
-        if (key == CODED){
-    if (keyCode == RIGHT){
-      shapeList.get(currentShapeIdx).moveRight();
-      //println("yay");
+    if (key == CODED){
+      if (keyCode == RIGHT){
+        shapeList.get(currentShapeIdx).moveRight();
+        //println("yay");
+      }
     }
-  }
      
   if (key == CODED){
     if (keyCode == LEFT){

@@ -82,6 +82,7 @@ void draw() {
  
  //blocks[3][3] = 1;
    
+  clearFilledRow();
 
   for (int x=0; x<width/blockSize; x++) {
     for (int y=0; y<height/blockSize; y++) {
@@ -115,4 +116,30 @@ void draw() {
   
   
   
+}
+
+void clearFilledRow(){
+  println("start");
+  int r = -1;
+  for(int y=0; y<height/blockSize; y++){
+    r = y;
+    for(int x=0; x<width/blockSize; x++) {
+      //println(x, y, blocks[x][y]);
+      if(blocks[x][y] == 0){
+       r = -1;
+      }
+    //  else{
+    //    break;
+        
+    //}
+  }
+  println("end", r);
+  if(r>0){
+    println("weeeeeeeeeeeeeeee", r);
+    for (int x=0; x<width/blockSize; x++) {
+      blocks[x][r] = 0;
+      
+    }
+  }
+ }
 }

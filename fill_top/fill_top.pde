@@ -1,35 +1,7 @@
-int blockSize = 30;
-
-int[][] blocks;
-
-ArrayList<Shape> shapeList = new ArrayList<>();
-int currentShapeIdx;
-
-void setup() {
-  size (390, 600);
-
-  blocks = new int[width/blockSize][height/blockSize];
-  
-  //frameRate(1);
-  
-  shapeList.add(new Shape((int)random(0,7)));
-  currentShapeIdx = 0;
-
-}
-
-void keyPressed(){
-  if (key == CODED){
-    if (keyCode == UP){
-      if(shapeList.get(currentShapeIdx).canMoveDown() 
-      && shapeList.get(currentShapeIdx).canMoveRight() 
-      && shapeList.get(currentShapeIdx).canMoveLeft()){
-        shapeList.get(currentShapeIdx).rotater();
-      }
-    }
-  }
-}
 
 void draw() {
+
+//INCLUDE ALL DRAW FUNCTION CONTENTS INSIDE THIS IF STATEMENT
 if(shapeList.get(currentShapeIdx).stopAtTop() == true){
   
   

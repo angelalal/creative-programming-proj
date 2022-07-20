@@ -5,3 +5,5 @@ add end game when fill to top
  <br />
 
 fixed minor bugs ish but maybe can find more
+<br />
+add score counter

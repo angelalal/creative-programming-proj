@@ -73,7 +73,7 @@ class Shape{
   boolean canMoveRight(){
     boolean canMoveRight = true;
     for(int i=0; i<arr.length; i++){
-      if(arr[i][0]>=width/blockSize - 1){
+      if(arr[i][0]>=width/blockSize - 1 || !canMoveDown()){
         canMoveRight = false ;
       }
     }
@@ -83,7 +83,7 @@ class Shape{
   boolean canMoveLeft(){
     boolean canMoveLeft = true;
     for(int i=0; i<arr.length; i++){
-      if(arr[i][0]<=0){
+      if(arr[i][0]<=0 || !canMoveDown()){
         canMoveLeft = false ;
       }
     }

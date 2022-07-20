@@ -1,4 +1,6 @@
-add clear line when full
+add move down after clearing
+<br />
+side touchy
  <br />
  <br />
 

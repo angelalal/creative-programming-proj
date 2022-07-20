@@ -45,6 +45,8 @@ void keyPressed(){
 }
 
 void draw() {
+
+if(shapeList.get(currentShapeIdx).stopAtTop() == true){
   
   if(shapeList.get(currentShapeIdx).canMoveDown()){
     for (int x=0; x<width/blockSize; x++) {
@@ -115,7 +117,7 @@ void draw() {
 
   
   
-  
+  }
 }
 
 void clearFilledRow(){

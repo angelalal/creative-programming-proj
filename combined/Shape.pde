@@ -61,9 +61,12 @@ class Shape{
   }
   
   boolean canMoveDown(){
-    boolean boo=true;
+     boolean boo=true;
     for(int i=0; i<arr.length; i++){
-     if(arr[i][1]>=height/blockSize-1){
+      int a = arr[i][0];
+      int b = arr[i][1];
+      //println(a, b, blocks[a+1][b]);
+     if(b>=height/blockSize-1 || blocks[a][b+1] == 1){
       boo = false ;
      }
     }
@@ -91,7 +94,8 @@ class Shape{
   }
   
   void update(){
-    if(canMoveDown()){
+    boolean boo = canMoveDown();
+    if(boo){
       for (int x=0; x<arr.length; x++) {
         
           int value = arr[x][1];
@@ -99,11 +103,19 @@ class Shape{
             
       }
     } else {
+      for (int x=0; x<arr.length; x++) {
+        //println(arr[x][0], arr[x][1]);
+        int a = arr[x][0];
+        int b = arr[x][1];
+        blocks[a][b] = 1;
+        //println("settle");
+        //println(blocks[a][b]);
+      }
       shapeList.add(new Shape((int)random(0, 7)));
       currentShapeIdx++;
-      
     }
   }
+  
   
   void rotater(){
     //int [] mid = new int[2];

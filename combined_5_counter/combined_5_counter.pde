@@ -6,6 +6,7 @@ ArrayList<Shape> shapeList = new ArrayList<>();
 int currentShapeIdx;
 
 int counter;
+int score;
 
 void setup() {
   size (390, 600);
@@ -123,6 +124,9 @@ if(shapeList.get(currentShapeIdx).stopAtTop() == true){
   } else{
    background(0); 
   }
+  textSize(20);
+  fill(0);
+  text("SCORE : " + score, 280, 40);
 }
 
 void clearFilledRow(){
@@ -143,6 +147,7 @@ void clearFilledRow(){
   //println("end", r);
  if(r>0){
     //println("weeeeeeeeeeeeeeee", r);
+    score = counter++ + 1;
     println("Score: " + (counter++ + 1));
     for (int x=0; x<width/blockSize; x++) {
       blocks[x][r] = 0; 
@@ -165,6 +170,8 @@ void clearFilledRow(){
   }
   
  }
+ 
+ 
 
  
 }

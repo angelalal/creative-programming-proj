@@ -28,6 +28,8 @@ void setup() {
   shapeList.add(new Shape((int)random(0, 7)));
   currentShapeIdx = 0;
   
+  gameOver =  new SoundFile(this, "gameOver2.wav");
+  
   
   
   
@@ -141,10 +143,10 @@ if(shapeList.get(currentShapeIdx).stopAtTop() == true){
    text("GAME", 75, 200);
    text("OVER", 80, 300);
    gameOverBoo = true;
-   playSound();
+   //playSound();
    
-   //gameOver =  new SoundFile(this, "gameOver2.wav");
-   //gameOver.play(1);
+   
+   if(!gameOver.isPlaying())gameOver.play(1);
    
    //minim = new Minim(this);
    //player = minim.loadFile("gameOver2.wav", 2048);
@@ -203,11 +205,11 @@ void clearFilledRow(){
  
 }
 
-void playSound(){
- if(gameOverBoo){
-   if(frameCount%480==0){
-   gameOver =  new SoundFile(this, "gameOver2.wav");
-   gameOver.play(1);
-   }
- }
-}
+//void playSound(){
+// if(gameOverBoo){
+//   if(frameCount%480==0){
+//   gameOver =  new SoundFile(this, "gameOver2.wav");
+//   gameOver.play(1);
+//   }
+// }
+//}

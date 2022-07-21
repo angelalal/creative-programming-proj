@@ -123,6 +123,10 @@ if(shapeList.get(currentShapeIdx).stopAtTop() == true){
   
   } else{
    background(0); 
+   textSize(100);
+   fill(255);
+   text("GAME", 75, 200);
+   text("OVER", 80, 300);
   }
   textSize(20);
   fill(0);
